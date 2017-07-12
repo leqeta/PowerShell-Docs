@@ -90,7 +90,7 @@ This example shows how to update the types in a type file multiple times in the 
 ### Example 3: Add a script property to DateTime objects
 ```
 PS C:\> Update-TypeData -TypeName "System.DateTime" -MemberType ScriptProperty -MemberName "Quarter" -Value {if ($this.Month -in @(1,2,3)) {"Q1"} elseif ($this.Month -in @(4,5,6)) {"Q2"} elseif ($this.Month -in @(7,8,9)) {"Q3"} else {"Q4"} }
-PS C:\> (Get-Date).QuarterQ1
+PS C:\> (Get-Date).Quarter
 ```
 
 This example uses **Update-TypeData** to add the Quarter script property to **System.DateTime** objects in the current session, such as those returned by the Get-Date cmdlet.
